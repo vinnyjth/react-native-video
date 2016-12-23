@@ -117,7 +117,7 @@ static NSString *const playbackRate = @"rate";
     {
         return [playerItem seekableTimeRanges].firstObject.CMTimeRangeValue;
     }
-    
+
     return (kCMTimeRangeZero);
 }
 
@@ -381,8 +381,8 @@ static NSString *const playbackRate = @"rate";
     }
   } else if (object == _player) {
       if([keyPath isEqualToString:playbackRate]) {
-          self.onPlaybackRateChange(@{@"playbackRate": [NSNumber numberWithFloat:_player.rate],
-                                      @"target": self.reactTag});
+          // self.onPlaybackRateChange(@{@"playbackRate": [NSNumber numberWithFloat:_player.rate],
+          //                             @"target": self.reactTag});
           if(_playbackStalled && _player.rate > 0) {
               self.onPlaybackResume(@{@"playbackRate": [NSNumber numberWithFloat:_player.rate],
                                       @"target": self.reactTag});
